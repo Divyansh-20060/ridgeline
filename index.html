@@ -12,7 +12,7 @@
 <meta name="keywords" content="pickleball court booking bangalore, cricket turf bangalore, badminton court booking bengaluru, football turf booking, trail running club bangalore, ridgeline arena">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="author" content="Ridgeline Sports Arena &amp; Trail Club">
-<link rel="canonical" href="https://divyansh-20060.github.io/ridgeline/">
+<link rel="canonical" href="https://www.ridgelinesports.in/">
 
 <!-- Open Graph / WhatsApp / Social Cards -->
 <meta property="og:type" content="website">
@@ -201,13 +201,6 @@
     border: 1px solid var(--border-highlight); box-shadow: 0 20px 40px rgba(0,0,0,0.6);
   }
   .hero-media img { height: 470px; width: 100%; object-fit: cover; }
-  .hero-media .live-tag {
-    position: absolute; top: 16px; right: 16px; background: rgba(9,12,11,0.85);
-    backdrop-filter: blur(8px); border: 1px solid var(--border-highlight);
-    border-radius: 20px; padding: 6px 14px; display: flex; align-items: center; gap: 8px;
-    font-family: var(--font-mono); font-size: 0.72rem; color: #fff;
-  }
-  .live-dot { width: 8px; height: 8px; background: #10B981; border-radius: 50%; box-shadow: 0 0 8px #10B981; }
 
   /* Sections */
   section { padding: 92px 0; }
@@ -230,6 +223,13 @@
     backdrop-filter: blur(6px); border: 1px solid var(--border-highlight);
     padding: 4px 10px; border-radius: 6px; font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent);
   }
+  .court-hours {
+    position: absolute; bottom: 14px; right: 14px; background: rgba(9,12,11,0.88);
+    backdrop-filter: blur(8px); border: 1px solid var(--border-highlight);
+    padding: 5px 12px; border-radius: 20px; font-family: var(--font-mono); font-size: 0.72rem; color: #fff;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .court-hours .dot { width: 7px; height: 7px; background: #10B981; border-radius: 50%; box-shadow: 0 0 6px #10B981; }
   .court-content { padding: 26px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
   .court-content h3 { font-size: 1.35rem; margin: 0; display: flex; justify-content: space-between; align-items: baseline; }
   .court-content .price { font-family: var(--font-mono); font-size: 1.05rem; color: var(--accent); }
@@ -265,7 +265,6 @@
   .slot-btn:hover, .slot-btn.selected {
     background: var(--accent); color: #fff; border-color: var(--accent);
   }
-  .slot-btn.booked { opacity: 0.3; cursor: not-allowed; text-decoration: line-through; }
   .form-group { margin-bottom: 16px; }
   .form-group label { display: block; font-family: var(--font-mono); font-size: 0.75rem; color: var(--muted); margin-bottom: 6px; text-transform: uppercase; }
   .form-control {
@@ -274,17 +273,25 @@
   }
   .form-control:focus { outline: none; border-color: var(--accent); }
 
-  /* 3-Column Card Layouts */
+  /* 3-Column Card Layouts with Imagery */
   .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
   .card {
     background: var(--card); border: 1px solid var(--border); border-radius: 12px;
-    padding: 32px; display: flex; flex-direction: column; gap: 14px; transition: all 0.25s ease;
+    overflow: hidden; display: flex; flex-direction: column; transition: all 0.25s ease;
   }
-  .card:hover { transform: translateY(-4px); background: var(--card-hover); border-color: var(--border-highlight); }
-  .card .tag { font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); letter-spacing: 0.08em; font-weight: 600; }
-  .card h3 { font-size: 1.3rem; margin: 0; }
-  .card p { margin: 0; color: var(--muted); font-size: 0.95rem; }
-  .card .meta { font-family: var(--font-mono); font-size: 0.8rem; color: var(--muted); margin-top: auto; padding-top: 14px; border-top: 1px solid var(--border); }
+  .card:hover { transform: translateY(-4px); background: var(--card-hover); border-color: var(--border-highlight); box-shadow: 0 16px 32px rgba(0,0,0,0.4); }
+  .card-media { height: 190px; width: 100%; overflow: hidden; position: relative; }
+  .card-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
+  .card:hover .card-media img { transform: scale(1.04); }
+  .card-badge {
+    position: absolute; top: 12px; left: 12px; background: rgba(9,12,11,0.85);
+    backdrop-filter: blur(6px); border: 1px solid var(--border-highlight);
+    padding: 4px 10px; border-radius: 6px; font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); font-weight: 600;
+  }
+  .card-body { padding: 26px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+  .card-body h3 { font-size: 1.25rem; margin: 0; }
+  .card-body p { margin: 0; color: var(--muted); font-size: 0.94rem; }
+  .card-body .meta { font-family: var(--font-mono); font-size: 0.8rem; color: var(--muted); margin-top: auto; padding-top: 14px; border-top: 1px solid var(--border); }
 
   /* Elevation Profile */
   .elevation-block {
@@ -410,7 +417,6 @@
           <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=900&auto=format&fit=crop"
                alt="Athletes training at sunrise in Bengaluru sports arena"
                width="800" height="500" fetchpriority="high">
-          <div class="live-tag"><span class="live-dot"></span> Courts Open (5 AM – 11 PM)</div>
         </div>
       </div>
     </div>
@@ -432,6 +438,7 @@
             <span class="court-badge">High Demand</span>
             <img src="https://mcsagroup.com/galleryPhotos/ttOWI-PCEmT.jpg"
                  alt="Dedicated regulation pickleball court surface with net and tournament markings" loading="lazy">
+            <div class="court-hours"><span class="dot"></span> Open: 06:00 AM – 11:00 PM</div>
           </div>
           <div class="court-content">
             <h3>Pickleball Court <span class="price">₹600 / hr</span></h3>
@@ -441,7 +448,7 @@
               <span class="amenity-chip">Paddle Rental</span>
               <span class="amenity-chip">Covered Seating</span>
             </div>
-            <button class="btn btn-primary btn-sm open-booking-btn" data-court="Pickleball Court" data-price="600" style="margin-top:12px;">Select Slot &amp; Book</button>
+            <button class="btn btn-primary btn-sm open-booking-btn" data-type="court" data-title="Pickleball Court" data-price="600" style="margin-top:12px;">Select Slot &amp; Book</button>
           </div>
         </div>
 
@@ -451,6 +458,7 @@
             <span class="court-badge">Full Netting</span>
             <img src="https://5.imimg.com/data5/SELLER/Default/2022/6/CT/US/IT/11336583/isi-cricket-500x500.jpg"
                  alt="Enclosed box cricket turf arena with pitch and practice nets" loading="lazy">
+            <div class="court-hours"><span class="dot"></span> Open: 05:00 AM – Midnight</div>
           </div>
           <div class="court-content">
             <h3>Box Cricket Turf <span class="price">₹1,100 / hr</span></h3>
@@ -460,7 +468,7 @@
               <span class="amenity-chip">Bowling Machine</span>
               <span class="amenity-chip">Match Umpires</span>
             </div>
-            <button class="btn btn-primary btn-sm open-booking-btn" data-court="Box Cricket Turf" data-price="1100" style="margin-top:12px;">Select Slot &amp; Book</button>
+            <button class="btn btn-primary btn-sm open-booking-btn" data-type="court" data-title="Box Cricket Turf" data-price="1100" style="margin-top:12px;">Select Slot &amp; Book</button>
           </div>
         </div>
 
@@ -470,6 +478,7 @@
             <span class="court-badge">BWF Approved</span>
             <img src="https://5.imimg.com/data5/SELLER/Default/2023/10/349897115/YL/HU/ZO/47983915/indoor-badminton-court-construction-500x500.jpeg"
                  alt="Indoor badminton synthetic wooden court arena construction" loading="lazy">
+            <div class="court-hours"><span class="dot"></span> Open: 05:00 AM – 10:30 PM</div>
           </div>
           <div class="court-content">
             <h3>Badminton Indoor Arena <span class="price">₹450 / hr</span></h3>
@@ -479,7 +488,7 @@
               <span class="amenity-chip">Air Cooled</span>
               <span class="amenity-chip">Shoe Rental</span>
             </div>
-            <button class="btn btn-primary btn-sm open-booking-btn" data-court="Badminton Court" data-price="450" style="margin-top:12px;">Select Slot &amp; Book</button>
+            <button class="btn btn-primary btn-sm open-booking-btn" data-type="court" data-title="Badminton Court" data-price="450" style="margin-top:12px;">Select Slot &amp; Book</button>
           </div>
         </div>
 
@@ -489,6 +498,7 @@
             <span class="court-badge">All Weather</span>
             <img src="https://turfgladiators.com/wp-content/uploads/2024/02/sporting-court.png"
                  alt="High traction all weather multi-sport football soccer artificial turf arena" loading="lazy">
+            <div class="court-hours"><span class="dot"></span> Open: 24 Hours (Floodlights)</div>
           </div>
           <div class="court-content">
             <h3>5v5 Football Turf <span class="price">₹1,200 / hr</span></h3>
@@ -498,7 +508,7 @@
               <span class="amenity-chip">Bibs &amp; Balls</span>
               <span class="amenity-chip">Shower Rooms</span>
             </div>
-            <button class="btn btn-primary btn-sm open-booking-btn" data-court="5v5 Football Turf" data-price="1200" style="margin-top:12px;">Select Slot &amp; Book</button>
+            <button class="btn btn-primary btn-sm open-booking-btn" data-type="court" data-title="5v5 Football Turf" data-price="1200" style="margin-top:12px;">Select Slot &amp; Book</button>
           </div>
         </div>
       </div>
@@ -531,7 +541,7 @@
     </div>
   </div>
 
-  <!-- TRAIL TRAINING PLANS -->
+  <!-- TRAIL TRAINING PLANS (WITH VERIFIED TREK IMAGERY & ENROLLMENT BOOKING) -->
   <section id="programs">
     <div class="wrap">
       <div class="section-head">
@@ -540,29 +550,55 @@
         <p>Periodized training designed for tropical humidity, technical rocky ascents, and high-altitude mountain runs.</p>
       </div>
       <div class="grid3">
+        <!-- 1. Beginner 10K Plan -->
         <div class="card">
-          <span class="tag">Beginner</span>
-          <h3>City to Trail 10K</h3>
-          <p>Structured 12-week foundation transition for road runners to uneven trails, focusing on ankle stability and cadence.</p>
-          <span class="meta">12 weeks · 3 sessions/week</span>
+          <div class="card-media">
+            <span class="card-badge">Beginner</span>
+            <img src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?q=80&w=800&auto=format&fit=crop"
+                 alt="Runner navigating scenic outdoor singletrack woodland trail" loading="lazy">
+          </div>
+          <div class="card-body">
+            <h3>City to Trail 10K</h3>
+            <p>Structured 12-week foundation transition for road runners to uneven trails, focusing on ankle stability and cadence.</p>
+            <span class="meta">12 weeks · 3 sessions/week</span>
+            <button class="btn btn-primary btn-sm open-booking-btn" data-type="plan" data-title="City to Trail 10K Plan" data-price="2499" style="margin-top:14px; width:100%;">Enroll Plan · ₹2,499</button>
+          </div>
         </div>
+
+        <!-- 2. Intermediate 50K Plan -->
         <div class="card">
-          <span class="tag">Intermediate</span>
-          <h3>Ghats 50K Ultra Build</h3>
-          <p>Back-to-back weekend long runs, heat acclimation strategies, and technical hill repeats in Savandurga and Turahalli.</p>
-          <span class="meta">16 weeks · 4 sessions/week</span>
+          <div class="card-media">
+            <span class="card-badge">Intermediate</span>
+            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=800&auto=format&fit=crop"
+                 alt="Trekker navigating a technical rocky mountain ridge trail" loading="lazy">
+          </div>
+          <div class="card-body">
+            <h3>Ghats 50K Ultra Build</h3>
+            <p>Back-to-back weekend long runs, heat acclimation strategies, and technical hill repeats in Savandurga and Turahalli.</p>
+            <span class="meta">16 weeks · 4 sessions/week</span>
+            <button class="btn btn-primary btn-sm open-booking-btn" data-type="plan" data-title="Ghats 50K Ultra Build Plan" data-price="4999" style="margin-top:14px; width:100%;">Enroll Plan · ₹4,999</button>
+          </div>
         </div>
+
+        <!-- 3. Advanced 100K Plan -->
         <div class="card">
-          <span class="tag">Advanced</span>
-          <h3>Himalayan 100K Prep</h3>
-          <p>Targeted for races like Hell Race and Solang Skyultra. High-vert simulations, night navigation, and mandatory gear tests.</p>
-          <span class="meta">24 weeks · 5–6 sessions/week</span>
+          <div class="card-media">
+            <span class="card-badge">Advanced</span>
+            <img src="https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?q=80&w=800&auto=format&fit=crop"
+                 alt="Ultramarathon trail runner ascending alpine mountain terrain in the Himalayas" loading="lazy">
+          </div>
+          <div class="card-body">
+            <h3>Himalayan 100K Prep</h3>
+            <p>Targeted for races like Hell Race and Solang Skyultra. High-vert simulations, night navigation, and mandatory gear tests.</p>
+            <span class="meta">24 weeks · 5–6 sessions/week</span>
+            <button class="btn btn-primary btn-sm open-booking-btn" data-type="plan" data-title="Himalayan 100K Prep Plan" data-price="7999" style="margin-top:14px; width:100%;">Enroll Plan · ₹7,999</button>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- GROUP RUNS -->
+  <!-- GROUP RUNS (WITH RELEVANT BENGALURU TRAIL/PARK IMAGERY & RSVP BOOKING) -->
   <section id="group-runs" class="alt">
     <div class="wrap">
       <div class="section-head">
@@ -571,20 +607,49 @@
         <p>Open community runs split across three pace categories. First 3 runs are free for all newcomers.</p>
       </div>
       <div class="grid3">
+        <!-- 1. Turahalli Forest -->
         <div class="card">
-          <span class="tag">Saturday · 6:00 AM</span>
-          <h3>Turahalli Forest Singletrack</h3>
-          <p>8 km loop with punchy rocky climbs, sandy paths, and post-run filter coffee in South Bengaluru.</p>
+          <div class="card-media">
+            <span class="card-badge">Saturday · 6:00 AM</span>
+            <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=800&auto=format&fit=crop"
+                 alt="Rocky singletrack forest trail through Turahalli forest reserve" loading="lazy">
+          </div>
+          <div class="card-body">
+            <h3>Turahalli Forest Singletrack</h3>
+            <p>8 km loop with punchy rocky climbs, sandy paths, and post-run filter coffee in South Bengaluru.</p>
+            <span class="meta">Distance: 8 km · Gain: +280m</span>
+            <button class="btn btn-primary btn-sm open-booking-btn" data-type="run" data-title="Turahalli Forest Singletrack Run" data-price="0" style="margin-top:14px; width:100%;">RSVP Slot · Free</button>
+          </div>
         </div>
+
+        <!-- 2. Cubbon Park -->
         <div class="card">
-          <span class="tag">Tuesday · 6:00 AM</span>
-          <h3>Cubbon Park Cadence Drill</h3>
-          <p>Form correction, hill strides at the bandstand loop, and functional mobility workouts.</p>
+          <div class="card-media">
+            <span class="card-badge">Tuesday · 6:00 AM</span>
+            <img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?q=80&w=800&auto=format&fit=crop"
+                 alt="Lush green tree-lined park track in Cubbon Park Bengaluru" loading="lazy">
+          </div>
+          <div class="card-body">
+            <h3>Cubbon Park Cadence Drill</h3>
+            <p>Form correction, hill strides at the bandstand loop, and functional mobility workouts.</p>
+            <span class="meta">Distance: 5 km · Focus: Speed &amp; Vert</span>
+            <button class="btn btn-primary btn-sm open-booking-btn" data-type="run" data-title="Cubbon Park Cadence Drill" data-price="0" style="margin-top:14px; width:100%;">RSVP Slot · Free</button>
+          </div>
         </div>
+
+        <!-- 3. Avalabetta Mountain -->
         <div class="card">
-          <span class="tag">Sunday · 5:30 AM</span>
-          <h3>Avalabetta Mountain Long Run</h3>
-          <p>Bi-weekly 20 km mountain long runs focused on vertical ascent and fueling endurance.</p>
+          <div class="card-media">
+            <span class="card-badge">Sunday · 5:30 AM</span>
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=800&auto=format&fit=crop"
+                 alt="Scenic mountain ridge hilltop rock climb overlooking valleys" loading="lazy">
+          </div>
+          <div class="card-body">
+            <h3>Avalabetta Mountain Long Run</h3>
+            <p>Bi-weekly 20 km mountain long runs focused on vertical ascent and fueling endurance.</p>
+            <span class="meta">Distance: 20 km · Gain: +650m</span>
+            <button class="btn btn-primary btn-sm open-booking-btn" data-type="run" data-title="Avalabetta Mountain Long Run" data-price="0" style="margin-top:14px; width:100%;">RSVP Slot · Free</button>
+          </div>
         </div>
       </div>
     </div>
@@ -660,26 +725,28 @@
 <div class="modal-overlay" id="bookingModal">
   <div class="modal-box">
     <button class="modal-close" id="modalClose">&times;</button>
-    <span class="eyebrow">Direct Arena Reservation</span>
+    <span class="eyebrow" id="modalCategoryTag">Direct Arena Reservation</span>
     <h3 id="modalCourtTitle" style="margin-top:4px;">Book Court</h3>
     <p style="color:var(--muted); font-size:0.88rem; margin-bottom:16px;" id="modalCourtRate">Rate: ₹600 / hour</p>
 
-    <div class="form-group">
+    <div class="form-group" id="dateGroup">
       <label>Select Date</label>
       <input type="date" class="form-control" id="bookingDate">
     </div>
 
-    <label style="display:block; font-family:var(--font-mono); font-size:0.75rem; color:var(--muted); margin-bottom:6px; text-transform:uppercase;">Select Time Slot</label>
-    <div class="slot-grid">
-      <button class="slot-btn" data-slot="06:00 AM">06:00 AM</button>
-      <button class="slot-btn booked" disabled>07:00 AM</button>
-      <button class="slot-btn" data-slot="08:00 AM">08:00 AM</button>
-      <button class="slot-btn" data-slot="05:00 PM">05:00 PM</button>
-      <button class="slot-btn" data-slot="06:00 PM">06:00 PM</button>
-      <button class="slot-btn" data-slot="07:00 PM">07:00 PM</button>
-      <button class="slot-btn" data-slot="08:00 PM">08:00 PM</button>
-      <button class="slot-btn" data-slot="09:00 PM">09:00 PM</button>
-      <button class="slot-btn" data-slot="10:00 PM">10:00 PM</button>
+    <div id="slotSelectionBlock">
+      <label style="display:block; font-family:var(--font-mono); font-size:0.75rem; color:var(--muted); margin-bottom:6px; text-transform:uppercase;">Select Time Slot</label>
+      <div class="slot-grid">
+        <button class="slot-btn" data-slot="06:00 AM">06:00 AM</button>
+        <button class="slot-btn" data-slot="07:00 AM">07:00 AM</button>
+        <button class="slot-btn" data-slot="08:00 AM">08:00 AM</button>
+        <button class="slot-btn" data-slot="05:00 PM">05:00 PM</button>
+        <button class="slot-btn" data-slot="06:00 PM">06:00 PM</button>
+        <button class="slot-btn" data-slot="07:00 PM">07:00 PM</button>
+        <button class="slot-btn" data-slot="08:00 PM">08:00 PM</button>
+        <button class="slot-btn" data-slot="09:00 PM">09:00 PM</button>
+        <button class="slot-btn" data-slot="10:00 PM">10:00 PM</button>
+      </div>
     </div>
 
     <div class="form-group">
@@ -746,28 +813,56 @@
 </footer>
 
 <script>
-  // 1. Interactive Booking Modal Logic
+  // 1. Universal Interactive Booking/RSVP Modal Logic
   const modal = document.getElementById('bookingModal');
   const modalClose = document.getElementById('modalClose');
   const openButtons = document.querySelectorAll('.open-booking-btn');
+  const modalCategoryTag = document.getElementById('modalCategoryTag');
   const modalTitle = document.getElementById('modalCourtTitle');
   const modalRate = document.getElementById('modalCourtRate');
   const totalPrice = document.getElementById('totalPrice');
   const dateInput = document.getElementById('bookingDate');
-  const slotBtns = document.querySelectorAll('.slot-btn:not(.booked)');
+  const slotSelectionBlock = document.getElementById('slotSelectionBlock');
+  const slotBtns = document.querySelectorAll('.slot-btn');
+  const confirmBtn = document.getElementById('confirmBookingBtn');
   
   let currentPrice = 0;
   let selectedSlot = null;
+  let currentBookingType = 'court';
 
   dateInput.valueAsDate = new Date();
 
   openButtons.forEach(btn => {
     btn.addEventListener('click', () => {
-      const court = btn.dataset.court;
+      const type = btn.dataset.type || 'court';
+      const title = btn.dataset.title;
       currentPrice = parseInt(btn.dataset.price);
-      modalTitle.innerText = `Book ${court}`;
-      modalRate.innerText = `Rate: ₹${currentPrice} / hour`;
-      totalPrice.innerText = `₹${currentPrice}`;
+      currentBookingType = type;
+
+      modalTitle.innerText = title;
+
+      if (type === 'court') {
+        modalCategoryTag.innerText = "Arena Court Reservation";
+        modalRate.innerText = `Rate: ₹${currentPrice} / hour`;
+        totalPrice.innerText = `₹${currentPrice}`;
+        slotSelectionBlock.style.display = 'block';
+        confirmBtn.innerText = "Confirm & Pay";
+      } else if (type === 'plan') {
+        modalCategoryTag.innerText = "Training Plan Enrollment";
+        modalRate.innerText = `One-time Program Fee: ₹${currentPrice}`;
+        totalPrice.innerText = `₹${currentPrice}`;
+        slotSelectionBlock.style.display = 'none';
+        selectedSlot = "Program Start";
+        confirmBtn.innerText = "Enroll & Access Plan";
+      } else if (type === 'run') {
+        modalCategoryTag.innerText = "Free Community Run RSVP";
+        modalRate.innerText = "Entry: Free for Community Members";
+        totalPrice.innerText = "FREE";
+        slotSelectionBlock.style.display = 'none';
+        selectedSlot = "Scheduled Morning Slot";
+        confirmBtn.innerText = "Confirm RSVP";
+      }
+
       modal.classList.add('active');
     });
   });
@@ -784,16 +879,16 @@
     });
   });
 
-  document.getElementById('confirmBookingBtn').addEventListener('click', () => {
+  confirmBtn.addEventListener('click', () => {
     const name = document.getElementById('userName').value;
     const phone = document.getElementById('userPhone').value;
 
-    if (!name || !phone || !selectedSlot) {
-      alert('Please select a slot and enter your name and phone number.');
+    if (!name || !phone || (!selectedSlot && currentBookingType === 'court')) {
+      alert('Please complete the details and select an available time slot.');
       return;
     }
 
-    alert(`Booking Confirmed for ${name}! Details and UPI payment link dispatched to WhatsApp: ${phone}`);
+    alert(`Registration Successful for ${name}! Details and pass sent to WhatsApp: ${phone}`);
     modal.classList.remove('active');
   });
 
