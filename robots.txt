@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://divyansh-20060.github.io/ridgeline/sitemap.xml
